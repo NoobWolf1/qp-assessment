@@ -3,6 +3,7 @@ import { Router } from "express";
 import authRouter from "./authRoute";
 import docsRouter from "./docsRoute";
 import userRouter from "./userRoutes";
+import groceryRouter from "./groceryRoute";
 
 const appRouter = Router();
 
@@ -20,6 +21,10 @@ const appRoutes = [
     path: "/docs",
     router: docsRouter,
   },
+  {
+    path: "/grocery",
+    router: groceryRouter,
+  }
 ];
 
 appRoutes.forEach(route => {

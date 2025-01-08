@@ -8,6 +8,7 @@ export const registerSchema = Joi.object({
   password: Joi.string().min(8).required(),
   confirm_password: Joi.string().min(8),
   country_code: Joi.string(),
+  role: Joi.number().valid(1, 2),
 });
 
 export const loginSchema = Joi.object({
@@ -24,4 +25,5 @@ export const updateSchema = Joi.object({
   province: Joi.string(),
   location: Joi.string(),
   date_of_birth: Joi.string(),
+  role: Joi.number().valid(1, 2),
 });
