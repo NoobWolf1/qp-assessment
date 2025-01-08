@@ -10,6 +10,7 @@ class User extends Model {
   public mobile!: string;
 
   public status!: boolean;
+  public role!: number;
 
   // timestamps!
   public readonly created_at!: Date;
