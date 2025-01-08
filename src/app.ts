@@ -1,6 +1,7 @@
 import express from "express";
 import logger from "morgan";
-import { dbSync } from "./db/connection";
+//import { dbSync } from "./db/connection";
+import { dbSync } from "./models";
 import cors from "cors";
 import { customRequest } from "./types/customDefinition";
 import { deserializeUser } from "./middleware";

@@ -15,7 +15,6 @@ const isAdmin = async (
         .status(403)
         .json({ error: true, errorMsg: "Access not granted" });
     }
-    return next();
 
     return next();
   } catch (err) {
@@ -25,6 +24,7 @@ const isAdmin = async (
     } else if (err) {
       msg = err;
     }
+    
     return res.status(400).json({ errorMsg: msg, error: true });
   }
 };
