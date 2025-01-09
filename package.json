@@ -1,10 +1,9 @@
 {
-  "name": "@nabadeep25/create-ts-node-app",
-  "version": "0.3.0",
-  "description": "A boilerplate/starter project for quickly building RESTful APIs using Node.js,Typescript, Express, and Sequelize.",
-  "author": "Nabadeep Thakuria",
-  "bin": "bin/cli.js",
-  "homepage": "https://github.com/nabadeep25/typescript-node-sequelize-boilerplate",
+  "name": "qp-assessment",
+  "version": "1.0",
+  "description": "A RESTful API for managing grocery items, supporting admin operations, user bookings, and containerized deployment for scalability.",
+  "author": "Malay Shukla",
+  "homepage": "https://github.com/NoobWolf1/qp-assessment",
   "license": "MIT",
   "keywords": [
     "typescript",
@@ -12,12 +11,9 @@
     "express",
     "sequelize",
     "mysql",
-    "postgres",
-    "boilerplate",
-    "template",
-    "typescript node sequelize boilerplate",
+    "typescript node sequelize",
     "typescript node",
-    "typescript sequelize boilerplate"
+    "typescript sequelize"
   ],
   "scripts": {
     "build-ts": "tsc",
