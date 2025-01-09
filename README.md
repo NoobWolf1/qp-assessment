@@ -45,7 +45,9 @@ This project is a RESTful API for managing grocery items, supporting admin opera
    ```
 
 2. Install dependencies:
-   ```npm install
+   ```sh
+   npm install
+   ```
 
 3. Set up environment variables:
     ```sh
@@ -66,15 +68,21 @@ This project is a RESTful API for managing grocery items, supporting admin opera
     ```
 
 4. Run the application 
-  ```npm run dev
+  ```sh
+  npm run dev
+  ```
 
 ### Running in Docker
 
 1. Build the Docker image: 
-  ```docker build -t qp-assessment:development --target development .
+  ```sh
+  docker build -t qp-assessment:development --target development .
+  ```
 
 2. Run the Docker container:
-  ```docker run -p 3001:3001 qp-assessment:development
+  ```sh
+  docker run -p 3001:3001 qp-assessment:development
+  ```
 
 ### API Documentation
 - The API documentation is available at /api/docs when the server is running.
