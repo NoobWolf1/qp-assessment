@@ -5,6 +5,7 @@ import {
   updateGrocery,
   getGroceries,
   placeOrder,
+  deleteGrocery
 } from "../../controllers/grocery";
 import { grocerySchema, updateGrocerySchema } from "../../validation/grocery";
 import { orderSchema } from "../../validation/order";
@@ -17,6 +18,8 @@ groceryRoute.put("/:id", isAdmin, validateRequest(updateGrocerySchema), updateGr
 
 groceryRoute.get("/", getGroceries);
 groceryRoute.post("/order", validateRequest(orderSchema), placeOrder);
+
+groceryRoute.delete("/:id", isAdmin, deleteGrocery);
 
 
 export default groceryRoute;
