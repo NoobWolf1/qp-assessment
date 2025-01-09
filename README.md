@@ -84,6 +84,45 @@ This project is a RESTful API for managing grocery items, supporting admin opera
   docker run -p 3001:3001 qp-assessment:development
   ```
 
+3. Create docker-compose.yml file based on below example
+  ```yaml
+  version: "3.8"
+  services:
+    app:
+      build: .
+      ports:
+        - "3003:3003"
+      environment:
+        - NODE_ENV=development
+        - DB_HOST=localhost
+        - DB_NAME=grocery
+        - DB_PASSWORD=yourPass
+        - DB_PORT=3306
+        - DB_TYPE=mysql
+        - DB_USER=root
+        - PORT=3001
+        
+      depends_on:
+        - db
+      
+      volumes:
+        - .:/usr/src/app
+        - /usr/src/app/node_modules
+
+    db:
+      image: mysql:8
+      restart: always
+      environment:
+        MYSQL_ROOT_PASSWORD: yourPass
+      ports:
+        - "3307:3306"
+      volumes:
+        - db_data:/var/lib/mysql
+
+  volumes:
+    db_data:
+  ```
+
 ### API Documentation
 - The API documentation is available at /api/docs when the server is running.
 
