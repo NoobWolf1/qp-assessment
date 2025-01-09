@@ -17,7 +17,7 @@ async function runCommand(command) {
 if (process.argv.length < 3) {
   console.log("Please specify the target project directory.");
   console.log("For example:");
-  console.log("    npx @nabadeep25/create-ts-node-app my-app");
+  console.log("    npx @NoobWolf1/qp-assessment qp-assessment");
   process.exit(1);
 }
 
@@ -25,7 +25,7 @@ const currentPath = process.cwd();
 const folderName = process.argv[2];
 const appPath = path.join(currentPath, folderName);
 const repo =
-  "https://github.com/nabadeep25/typescript-node-sequelize-boilerplate.git";
+  "https://github.com/NoobWolf1/qp-assessment.git";
 
 try {
   fs.mkdirSync(appPath);
@@ -71,7 +71,6 @@ async function setup() {
     console.log(`    cd ${folderName}`);
     console.log("    npm run watch");
     console.log();
-    console.log("🎉 Happy coding 💻!");
   } catch (error) {
     console.log(error);
   }
