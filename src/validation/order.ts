@@ -1,8 +1,9 @@
 import Joi from "joi";
 
 export const orderSchema = Joi.object({
-  user_id: Joi.string().required(),
+  userId: Joi.number().required(),
   status: Joi.string().valid("pending", "completed"),
+  items: Joi.array().required(),
 });
 
 export const updateOrderSchema = Joi.object({
