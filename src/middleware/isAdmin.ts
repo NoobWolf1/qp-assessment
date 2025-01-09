@@ -24,7 +24,7 @@ const isAdmin = async (
     } else if (err) {
       msg = err;
     }
-    
+
     return res.status(400).json({ errorMsg: msg, error: true });
   }
 };

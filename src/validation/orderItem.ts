@@ -7,6 +7,6 @@ export const orderItemSchema = Joi.object({
 });
 
 export const updateOrderItemSchema = Joi.object({
-    quantity: Joi.number(),
-    groceryId: Joi.number().required(),
+  quantity: Joi.number(),
+  groceryId: Joi.number().required(),
 });
