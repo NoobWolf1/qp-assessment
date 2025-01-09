@@ -1,0 +1,9 @@
+node_modules
+dist
+.git
+.dockerignore
+npm-debug.log
+
+docker build -t qp-assessment:development --target development .
+
+docker run -p 3001:3001 qp-assessment:development
