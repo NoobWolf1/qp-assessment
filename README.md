@@ -129,7 +129,7 @@ This project is a RESTful API for managing grocery items, supporting admin opera
   ```
 
 ### API Documentation
-- The API documentation is available at /api/docs when the server is running.
+- The API documentation is available at http://localhost:3001/api/v1/docs/ when the server is running.
 
 ### License
 - This project is licensed under the MIT License - see the LICENSE file for details.
