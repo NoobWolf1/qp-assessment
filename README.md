@@ -6,6 +6,12 @@ This project is a RESTful API for managing grocery items, supporting admin opera
 
 ## Features
 
+### Login and Signup features:
+- **Sign up User**: API to add new user to the system.
+- **Login User**: API to login into the system using.
+- **Update user details**: API to update properties such as name and email, dob of user.
+- **Validation of User**: API to check whether user is logged in or not.
+
 ### Admin Responsibilities:
 - **Add Grocery Items**: API to add new grocery items to the system.
 - **View Grocery Items**: API to view existing grocery items.
@@ -36,23 +42,39 @@ This project is a RESTful API for managing grocery items, supporting admin opera
    ```sh
    git clone https://github.com/NoobWolf1/qp-assessment.git
    cd qp-assessment
+   ```
 
 2. Install dependencies:
-   npm install
+   ```npm install
 
 3. Set up environment variables:
-  Copy the .env.example file to .env and update the values as needed.
+    ```sh
+    cp .env.example .env
+    ```
+
+    Update the `.env` file with the following values:
+    ```env
+    DB_HOST=localhost
+    DB_NAME=grocery
+    DB_PASSWORD=yourPass
+    DB_PORT=3306
+    DB_TYPE=mysql
+    DB_USER=root
+    PORT=3001
+
+    NODE_ENV=development
+    ```
 
 4. Run the application 
-  npm run dev
+  ```npm run dev
 
 ### Running in Docker
 
 1. Build the Docker image: 
-  docker build -t qp-assessment:development --target development .
+  ```docker build -t qp-assessment:development --target development .
 
 2. Run the Docker container:
-  docker run -p 3001:3001 qp-assessment:development
+  ```docker run -p 3001:3001 qp-assessment:development
 
 ### API Documentation
 - The API documentation is available at /api/docs when the server is running.
