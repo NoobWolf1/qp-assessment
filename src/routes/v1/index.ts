@@ -24,7 +24,7 @@ const appRoutes = [
   {
     path: "/grocery",
     router: groceryRouter,
-  }
+  },
 ];
 
 appRoutes.forEach(route => {

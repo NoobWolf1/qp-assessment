@@ -56,7 +56,9 @@ export const placeOrder = async (req: Request, res: Response) => {
     });
 
     if (outOfStockItems.length > 0) {
-      return res.status(400).json({ message: "Some items are out of stock", outOfStockItems });
+      return res
+        .status(400)
+        .json({ message: "Some items are out of stock", outOfStockItems });
     }
 
     const order = await Order.create({ userId });
@@ -79,19 +81,15 @@ export const placeOrder = async (req: Request, res: Response) => {
   }
 };
 export const deleteGrocery = async (req: Request, res: Response) => {
-    try {
-        const { id } = req.params;
-        const grocery = await Grocery.findByPk(id);
-        if (!grocery) 
-            
-            return res.status(404).json({ message: "Grocery not found" });
-        
-        await grocery.destroy();
+  try {
+    const { id } = req.params;
+    const grocery = await Grocery.findByPk(id);
+    if (!grocery) return res.status(404).json({ message: "Grocery not found" });
 
-        res.json({ message: "Grocery deleted successfully" });
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
+    await grocery.destroy();
+
+    res.json({ message: "Grocery deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
-
-// Additional methods: deleteGrocery, getAllGroceries
