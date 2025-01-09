@@ -41,7 +41,3 @@ Design and implement a set of API endpoints to manage grocery items for both adm
 
 2. **Submit the Link**:
    - Once the implementation is complete, submit the GitHub repository link on the given URL.
-
----
-
-## Suggested Folder Structure
