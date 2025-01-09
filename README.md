@@ -72,7 +72,7 @@ This project is a RESTful API for managing grocery items, supporting admin opera
   npm run dev
   ```
 
-### Running in Docker
+### Running in Docker (Make sure you have installed Docker and DockerCompose)
 
 1. Build the Docker image: 
   ```sh
@@ -121,6 +121,11 @@ This project is a RESTful API for managing grocery items, supporting admin opera
 
   volumes:
     db_data:
+  ```
+
+4. Run docker-compose
+  ```sh
+  docker-compose up --build
   ```
 
 ### API Documentation
