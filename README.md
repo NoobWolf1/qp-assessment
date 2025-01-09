@@ -72,7 +72,7 @@ This project is a RESTful API for managing grocery items, supporting admin opera
   npm run dev
   ```
 
-### Running in Docker
+### Running in Docker (Make sure you have installed Docker and DockerCompose)
 
 1. Build the Docker image: 
   ```sh
@@ -82,6 +82,50 @@ This project is a RESTful API for managing grocery items, supporting admin opera
 2. Run the Docker container:
   ```sh
   docker run -p 3001:3001 qp-assessment:development
+  ```
+
+3. Create docker-compose.yml file based on below example
+  ```yaml
+  version: "3.8"
+  services:
+    app:
+      build: .
+      ports:
+        - "3003:3003"
+      environment:
+        - NODE_ENV=development
+        - DB_HOST=localhost
+        - DB_NAME=grocery
+        - DB_PASSWORD=yourPass
+        - DB_PORT=3306
+        - DB_TYPE=mysql
+        - DB_USER=root
+        - PORT=3001
+        
+      depends_on:
+        - db
+      
+      volumes:
+        - .:/usr/src/app
+        - /usr/src/app/node_modules
+
+    db:
+      image: mysql:8
+      restart: always
+      environment:
+        MYSQL_ROOT_PASSWORD: yourPass
+      ports:
+        - "3307:3306"
+      volumes:
+        - db_data:/var/lib/mysql
+
+  volumes:
+    db_data:
+  ```
+
+4. Run docker-compose
+  ```sh
+  docker-compose up --build
   ```
 
 ### API Documentation
